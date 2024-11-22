@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stay Connect - Find PGs, Hotels, & Flatmates</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <style>
+        /* Global Styles */
+        body {
+            margin: 0;
+            background: url('./images/Studio\ HBA\ Project\ -\ Hilton\ Garden\ Inn.jpeg') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+    <!-- Top Header Section -->
+    <div class="top-header">
+        <div class="container">
+            <div class="details">
+                <i class="fas fa-phone-alt"></i> +91 9876543210
+                <i class="fas fa-envelope"></i> contact@stayconnect.com
+            </div>
+            <div class="social-icons">
+                <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.twitter.com" target="_blank" aria-label="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header Section -->
+<header class="header">
+    <div class="container">
+        <a href="index.html" class="logo-link">
+            <h1 class="logo">Stay<span>Connect</span></h1>
+        </a>
+        <nav class="nav">
+            <button class="property-owner-btn">Property Owner</button>
+            <div class="menu-icon" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </div>
+</header>
+
+
+    <!-- Slide-in Menu -->
+    <div id="side-menu" class="side-menu">
+        <ul>
+            <li>
+                <a href="#" onclick="toggleSubMenu(event)">Sign Up / Sign In</a>
+                <ul id="signup-submenu" class="submenu">
+                    <li><a href="#" onclick="openSignupModal()">Sign Up</a></li>
+                    <li><a href="#" onclick="openSigninModal()">Sign In</a></li>
+                </ul>
+            </li>
+            <li><a href="Hotels.html">PG Hostels</a></li>
+            <li><a href="#hotels">Hotels</a></li>
+            <li><a href="#flatmates">Flatmates</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signup-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeSignupModal()">×</button>
+            <h3>Sign Up</h3>
+            <form id="signup-form">
+                <div>
+                    <input type="text" id="name" placeholder="Name" name="name" required>
+                </div>
+                <div>
+                    <input type="text" id="phone" placeholder="Phone Number" name="phone" required>
+                </div>
+                <div>
+                    <input type="email" id="email" placeholder="Email" name="email" required>
+                </div>
+                <div>
+                    <input type="password" id="password" placeholder="Password" name="password" required>
+                </div>
+                <button type="button" id="sendOtpBtn" onclick="sendOTP()">Send OTP</button>
+            <div>
+                <input type="text" id="otp" placeholder="Enter OTP" name="otp" required>
+            </div>
+                <button type="button" onclick="verifyOTP()">Verify OTP</button>
+                <button type="submit" onclick="validateForm(event)">Sign Up</button>
+            </form>
+            <div class="modal-links">
+                <a href="#" onclick="openSigninModal(); closeSignupModal()">Already registered? Sign In</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Signin Modal -->
+    <div id="signin-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeSigninModal()">×</button>
+            <h3>Sign In</h3>
+            <form id="signin-form">
+                <div>
+                    <input type="email" id="login-email" placeholder="Email" name="email" required>
+                </div>
+                <div>
+                    <input type="password" id="login-password" placeholder="Password" name="password" required>
+                </div>
+                <button type="submit" onclick="login(event)">Sign In</button>
+            </form>
+            <div class="modal-links">
+                <a href="#" onclick="openForgotPasswordModal(); closeSigninModal()">Forgot Password?</a>
+                <a href="#" onclick="openSignupModal(); closeSigninModal()">New User? Sign Up</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Forgot Password Modal -->
+    <div id="forgot-password-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeForgotPasswordModal()">×</button>
+            <h3>Forgot Password</h3>
+            <form id="forgot-password-form">
+                <div>
+                    <input type="email" id="forgot-email" placeholder="Enter your email" name="email" required>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2024 StayConnect. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="js/scripts.js"></script>
+    <script>
+
+    </script>
+</body>
+</html>
